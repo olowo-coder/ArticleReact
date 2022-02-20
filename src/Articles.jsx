@@ -2,11 +2,22 @@ import React from 'react';
 import Article from './Article';
 
 
-function Articles() {
+const Articles = ({articlesAll}) => {
   return (
-    <div>
-        <Article/>
-    </div>
+    <>
+        {articlesAll.map((item) => (
+            <Article
+            key={item.id}
+            titleArticle={item.title}
+            namePerson={item.author}
+            cardPicture={item.imageUrl}
+            personPicture={item.authorImageUrl}
+            dateSet={item.createdTime}
+            descriptionContent={item.description}
+            />
+        ))}
+        
+    </>
   )
 }
 
